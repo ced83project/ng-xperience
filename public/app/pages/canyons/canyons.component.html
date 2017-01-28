@@ -35,22 +35,27 @@
                 <br>
                 Selon vos envies et vos capacités, nous vous conseillerons un itinéraire adapté à votre pratique, répertorié sur 3 niveaux de difficulté.<br>
                 <ul>
-                  <li><strong class="text-">Xperience verte:</strong> pour découvrir l'activité</li>
-                  <li><strong class="text-">Xperience bleu:</strong> pour plus de sensations</li>
-                  <li><strong class="text-">Xperience rouge:</strong> pour les sportifs aguerris à l'activité</li>
+                  <li><strong class="text-">Xperience Verte:</strong> pour découvrir l'activité</li>
+                  <li><strong class="text-">Xperience Bleu:</strong> pour plus de sensations</li>
+                  <li><strong class="text-">Xperience Rouge:</strong> pour les sportifs aguerris à l'activité</li>
                 </ul>
             </div>
           </div>
           <div class="content row">
             <div class="col-xs-12">
-              <h3 class="light muted">Xperience verte</h3>
+              <ul>
+                <li class="text" *ngFor="let item of items | async">
+                  {{item.prop1}}
+                </li>
+              </ul>
+              <h3 class="canyon-level light muted">Xperience Verte</h3>
             </div>
             <div *ngFor="let canyon of (canyons | canyonLevelFilter:'1')" class="col-lg-12 col-sm-6 col-xs-12">
               <div class="media activity canyon canyon-success">
                 <div class="col-lg-3 canyon-left">
                   <div class="cover" [ngStyle]="{'background':'url(assets/img/activity/canyon/' + canyon.img + ')', 'background-size':'cover'}">
                     <div class="overlay text-center">
-                      <h3 class="white">{{canyon.level}}</h3>
+                      <h3 class="canyon-level white">{{canyon.level}}</h3>
                       <h5 class="light white">Tarif: <span class="price">{{canyon.price}}</span> / personne</h5>
                     </div>
                   </div>
@@ -99,14 +104,14 @@
               </div>
             </div>
             <div class="col-xs-12">
-              <h3 class="light muted">Xperience bleu</h3>
+              <h3 class="canyon-level light muted">Xperience Bleu</h3>
             </div>
             <div  *ngFor="let canyon of (canyons | canyonLevelFilter:'2')" class="col-lg-12 col-sm-6 col-xs-12">
               <div class="media activity canyon canyon-primary">
                 <div class="col-lg-3 canyon-left">
                   <div class="cover" [ngStyle]="{'background':'url(assets/img/activity/canyon/' + canyon.img + ')', 'background-size':'cover'}">
                     <div class="overlay text-center">
-                      <h3 class="white">{{canyon.level}}</h3>
+                      <h3 class="canyon-level white">{{canyon.level}}</h3>
                       <h5 class="light white">Tarif: <span class="price">{{canyon.price}}</span> / personne</h5>
                     </div>
                   </div>
@@ -155,14 +160,14 @@
               </div>
             </div>
             <div class="col-xs-12">
-              <h3 class="light muted">Xperience rouge</h3>
+              <h3 class="canyon-level light muted">Xperience Rouge</h3>
             </div>
             <div  *ngFor="let canyon of (canyons | canyonLevelFilter:'3')" class="col-lg-12 col-sm-6 col-xs-12">
               <div class="media activity canyon canyon-danger">
                 <div class="col-lg-3 canyon-left">
                   <div class="cover" [ngStyle]="{'background':'url(assets/img/activity/canyon/' + canyon.img + ')', 'background-size':'cover'}">
                     <div class="overlay text-center">
-                      <h3 class="white">{{canyon.level}}</h3>
+                      <h3 class="canyon-level white">{{canyon.level}}</h3>
                       <h5 class="light white">Tarif: <span class="price">{{canyon.price}}</span> / personne</h5>
                     </div>
                   </div>

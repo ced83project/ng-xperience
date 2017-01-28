@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
 import { Canyon } from './canyon';
 import { CanyonService } from './canyon.service';
-//import { CanyonLevelFilter } from './canyon.pipe';
 
 @Component({
   moduleId: module.id,
   selector: 'my-canyons',
-  //pipes: [ CanyonLevelFilter ],
   templateUrl: 'canyons.component.html',
   styleUrls:  ['canyons.component.css']
 })
@@ -18,12 +18,17 @@ export class CanyonsComponent implements OnInit {
 
   canyons: Canyon[];
   selectedCanyon: Canyon;
-  
+  items: FirebaseListObservable<any[]>;
+
   constructor(
     private route: ActivatedRoute, 
     private router: Router,
-    private canyonService: CanyonService
+    private canyonService: CanyonService,
+    af: AngularFire,
   ) {
+  
+    this.items = af.database.list('/items');
+  
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd){
         const tree = router.parseUrl(router.url);

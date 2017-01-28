@@ -1,0 +1,44 @@
+{
+  "items" : [
+      {
+          "prop1":"value1",
+          "prop2":"value2"
+      },
+      {
+          "prop1":"value3", 
+          "prop2":"value4"
+      }
+  ],
+  "canyons" : [
+    {
+        "id": "1",
+        "name": "RIVIÈRE STE SUZANNE",
+        "img": "sainte_suzanne.jpg",
+        "subTitle": "POUR LE FUN!",
+        "levelId": "1",
+        "level": "Xperience Verte",
+        "price": "50€",
+        "desc": "Au Nord de l'ile, la Rivière Ste suzanne offre la possibilité d'enchainer des sauts (de 5 à 12m), des rappels, un tarzan, le passage dans une grotte et une superbe tyrolienne, à adapter selon les envies et capacités de chacun! Un canyon d'initiation complet!",
+        "approche": "05 minutes",
+        "return": "30 minutes",
+        "duration": "03h00",
+        "rdv": "Parking de bassin boeuf à 09h00",
+        "from": "A partir de 8 ans"
+    },
+    {
+        "id": "2",
+        "name": "MINI FLEUR JAUNE",
+        "img": "fleur_jaune.jpg",
+        "subTitle": "POUR SON ESTHÉTISME!",
+        "levelId": "1",
+        "level": "Xperience Verte",
+        "price": "50€",
+        "desc": "Toboggans, sauts et rappels pour tous, un esthétisme incroyable se dégage sous le piton de sucre,le basalte façonnée par des eaux vives, des couleurs intenses et des jeux de lumière incessants dans cet encaissement. Le panorama sur le cirque de Cilaos est superbe.",
+        "approche": "30 minutes",
+        "return": "05 minutes",
+        "duration": "02h30",
+        "rdv": "08h00 parking de la poste à Cilaos",
+        "from": "A partir de 10 ans"
+    }
+  ]
+}
