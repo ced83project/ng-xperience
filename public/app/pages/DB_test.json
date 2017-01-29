@@ -39,6 +39,36 @@
         "duration": "02h30",
         "rdv": "08h00 parking de la poste à Cilaos",
         "from": "A partir de 10 ans"
+    },
+    {
+        "id": "3",
+        "name": "MINI GOBERT",
+        "img": "mini_gobert.jpg",
+        "subTitle": "POUR SON COTÉ SAUVAGE!",
+        "levelId": "1",
+        "level": "Xperience Verte",
+        "price": "50€",
+        "desc": "Des rappels de 11 à 22m dans un cadre tropical sauvage, venez apprécier la beauté du site pour un canyon à effectuer en eau afin d'en apprécier toute la splendeur et s'abandonner à un massage naturel.",
+        "approche": "aucune",
+        "return": "30 minutes",
+        "duration": "environ 03h00",
+        "rdv": "08h00 parking de la poste à Cilaos",
+        "from": "A partir de 15 ans"
+    },
+    {
+        "id": "4",
+        "name": "BRAS ROUGE",
+        "img": "bras_rouge.jpg",
+        "subTitle": "POUR SES COULEURS!",
+        "levelId": "2",
+        "level": "Xperience Bleu",
+        "price": "60€",
+        "desc": "La coloration de la roche par sédimentation des oxydes de fer contenue dans l'eau (ferrite) donne à ce canyon une dimension esthétique incroyable, il est bon de sauter dans les vasques et de glisser dans des toboggans au coeur du cirque de Cilaos!",
+        "approche": "30 minutes",
+        "return": "05 minutes",
+        "duration": "environ 03h00",
+        "rdv": "08h00 parking de la poste à Cilaos",
+        "from": "A partir de 15 ans"
     }
   ]
 }

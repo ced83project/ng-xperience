@@ -36,10 +36,12 @@
         defaultExtension: 'js'
       },
       rxjs: {
+        main: '/bundles/Rx.umd.js',
         defaultExtension: 'js'
       },
       angularfire2: {
-        main: 'bundles/angularFire2.umd.js'
+        main: 'bundles/angularFire2.umd.js',
+        defaultExtension: 'js'
       },
       'firebase': {
         main: './firebase.js',

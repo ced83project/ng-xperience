@@ -16,30 +16,5 @@ export class CanyonService {
   getAllCanyons(): Observable<Canyon[]> {
     return this.af.database.list('/canyons');
   }
-
-  getCanyonsGreen(): Observable<Canyon[]> {
-    return this.af.database.list('/canyons', {
-      query: {
-        orderByChild: 'levelId',
-        equalTo: '1',
-      }
-    });
-  }
-  getCanyonsBlue(): Observable<Canyon[]> {
-    return this.af.database.list('/canyons', {
-      query: {
-        orderByChild: 'levelId',
-        equalTo: '2',
-      }
-    });
-  }
-  getCanyonsRed(): Observable<Canyon[]> {
-    return this.af.database.list('/canyons', {
-      query: {
-        orderByChild: 'levelId',
-        equalTo: '3',
-      }
-    });
-  }
-
+  
 }
