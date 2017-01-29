@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { Canyon } from './canyon';
 import { CANYONS } from './mock-canyons';
@@ -7,19 +9,37 @@ import { CANYONS } from './mock-canyons';
 @Injectable()
 export class CanyonService {
 
-  getCanyons(): Promise<Canyon[]> {
-    return Promise.resolve(CANYONS);
+  private canyons$: FirebaseListObservable<Canyon[]>;
+
+  constructor(private af:AngularFire) { }
+
+  getAllCanyons(): Observable<Canyon[]> {
+    return this.af.database.list('/canyons');
   }
 
-  getCanyonsSlowly(): Promise<Canyon[]> {
-    return new Promise(resolve => {
-      // Simulate server latency with 2 second delay
-      setTimeout(() => resolve(this.getCanyons()), 2000);
+  getCanyonsGreen(): Observable<Canyon[]> {
+    return this.af.database.list('/canyons', {
+      query: {
+        orderByChild: 'levelId',
+        equalTo: '1',
+      }
+    });
+  }
+  getCanyonsBlue(): Observable<Canyon[]> {
+    return this.af.database.list('/canyons', {
+      query: {
+        orderByChild: 'levelId',
+        equalTo: '2',
+      }
+    });
+  }
+  getCanyonsRed(): Observable<Canyon[]> {
+    return this.af.database.list('/canyons', {
+      query: {
+        orderByChild: 'levelId',
+        equalTo: '3',
+      }
     });
   }
 
-  getCanyon(id: number): Promise<Canyon> {
-    return this.getCanyons()
-               .then(canyons => canyons.find(canyon => canyon.id === id));
-  }
 }

@@ -1,5 +1,7 @@
 import {Injectable, Pipe, PipeTransform} from '@angular/core';
 
+import { Observable } from 'rxjs/Observable';
+
 import { Canyon } from './canyon';
 
 @Pipe({
@@ -9,12 +11,9 @@ import { Canyon } from './canyon';
 export class CanyonLevelFilter implements PipeTransform {
   
   transform(canyons: any[], args: any[]): any {
-    // filter items array, items which match and return true will be kept, false will be filtered out
-    if (canyons==null) {
-      return null;
+    if (canyons) {
+      return canyons.filter(canyon => canyon.levelId.indexOf(args[0]) !== -1);
     }
-
-    return canyons.filter(canyon => canyon.levelId.indexOf(args[0]) !== -1);
   }
 
 }

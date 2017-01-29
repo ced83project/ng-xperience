@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
-import { Location } from '@angular/common';
 
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
 
 import { Canyon } from './canyon';
 import { CanyonService } from './canyon.service';
@@ -16,18 +15,14 @@ import { CanyonService } from './canyon.service';
 
 export class CanyonsComponent implements OnInit { 
 
-  canyons: Canyon[];
+  canyons: Observable<Canyon[]>;
   selectedCanyon: Canyon;
-  items: FirebaseListObservable<any[]>;
 
   constructor(
     private route: ActivatedRoute, 
     private router: Router,
     private canyonService: CanyonService,
-    af: AngularFire,
   ) {
-  
-    this.items = af.database.list('/items');
   
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd){
@@ -45,11 +40,7 @@ export class CanyonsComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.getCanyons();
-  }
-
-  getCanyons(): void {
-    this.canyonService.getCanyons().then(canyons => this.canyons = canyons);
+    this.canyons = this.canyonService.getAllCanyons();
   }
 
   onSelect(canyon: Canyon): void {
